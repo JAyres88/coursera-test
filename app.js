@@ -1,27 +1,28 @@
-var student = {
-    name="",
-    type = "student"
-};
+(function() {
+'use strict'; //use strict para não declarar variáveis de escopo global. 
 
-document.addEventListener('DomContentLoaded', contentLoaded);
+angular.module("1stApp", [])
 
-function contentLoaded(event){
-    document.getElementById('fullName').addEventListener("keyup", keyUp);
-}
+.controller('StrLenController', function ($scope) //deixar $ para variáveis do angular
+{
+     $scope.username = "";
+     $scope.strLenValue = 0;
 
-function keyUp(event){
-    calculateNumericOutput();
-}
+     $scope.ImprimeChar = function() {
+         
+         var valorCalculado = 
+         calculaNumeroDeChars($scope.username ); 
+         $scope.strLenValue = valorCalculado; // passando valor calculado para o escopo do app.
+     };
 
-function calculateNumericOutput(){
 
-    // rubish code.
-    student.name = document.getElementById('name').value;
-
-    for (var i=0 ; i< student.name.length;i++){
-        totalNameValue += student.name.charCodeAt(i);
+   function calculaNumeroDeChars(string){
+    var totalStringValue=0;
+    for(var i=0; i < string.length; i++){
+        totalStringValue += string.charCodeAt(i);
     }
+    return totalStringValue
+   };    
 
-    var output = "Valor do nome = " + totalNameValue;
-    document.getElementById('output').innetText = output;
-}
+});
+})();

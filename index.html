@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html >
     <head>
         <meta charset="utf-8">
-        <script src="app.js"></script>
-        <link rel="stylesheet" href="styles.css">
-        <title>Single Page Application</title>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>       
+        <link rel="stylesheet" href="styles.css">        
+        <title>Single Page Application StrLenght</title>
     </head>
-    <body>
-        <h3>Baixa Coesão e alto Acoplamento</h3>
-        <div id="nameCalculator">
+    <body ng-app="1stApp">  
+        <h1> StrLen Calculatore. </h1>
+        <div ng-controller="StrLenController">
             <div>
-                Seu Nome: <input type="text" id="fullName">
-            </div>
-            <div id="output"></div>
+             Seu Nome:
+            <input type="text" ng-model="username"
+                                ng-keyup="ImprimeChar()">               
+             <div>
+            Valor do Nome: 
+           {{strLenValue}} </div>         
         </div>
+    </div>
     </body>
 </html>
