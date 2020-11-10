@@ -13,7 +13,8 @@
             <div>
              Seu Nome:
             <input type="text" ng-model="username"
-                                ng-keyup="ImprimeChar()">               
+                                ng-keyup="ImprimeChar()"
+                                ng-blur="Upper();">               
              <div>
             Valor do Nome: 
            {{strLenValue}} </div>         

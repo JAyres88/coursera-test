@@ -3,10 +3,15 @@
 
 angular.module("1stApp", [])
 
-.controller('StrLenController', function ($scope) //deixar $ para variáveis do angular
+.controller('StrLenController', function ($scope, $filter) //deixar $ para variáveis do angular
 {
      $scope.username = "";
      $scope.strLenValue = 0;
+
+     $scope.Upper = function(){
+         var upCase = $filter('uppercase');
+         $scope.username = upCase($scope.username);
+     }
 
      $scope.ImprimeChar = function() {
          
@@ -23,6 +28,7 @@ angular.module("1stApp", [])
     }
     return totalStringValue
    };    
+  
 
 });
 })();
